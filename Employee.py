@@ -46,3 +46,10 @@ def CreateEmployeeFull(self,firstName,lastName):
     self.driver.find_element(By.XPATH, "//div[@id='app']/div/div[2]/div[2]/div/div/div/div[2]/div/form/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/label/span").click()
     self.driver.find_element(By.XPATH, "//div[@id='app']/div/div[2]/div[2]/div/div/div/div[2]/div/form/div[4]/div/div[2]").click()
     self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
+
+def SearchEmployee(self,SearchName):
+    self.driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList")
+    self.driver.find_element(By.XPATH, "//div[@id='app']/div/div[2]/div[2]/div/div/div[2]/form/div/div/div/div/div[2]/div/div/input").click()
+    self.driver.find_element(By.XPATH, "//div[@id='app']/div/div[2]/div[2]/div/div/div[2]/form/div/div/div/div/div[2]/div/div/input").clear()
+    self.driver.find_element(By.XPATH, "//div[@id='app']/div/div[2]/div[2]/div/div/div[2]/form/div/div/div/div/div[2]/div/div/input").send_keys(SearchName)
+    self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
